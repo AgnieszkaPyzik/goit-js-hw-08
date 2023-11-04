@@ -1,5 +1,6 @@
 'use strict';
-
+import Vimeo from '@vimeo/player';
+import throttle from 'lodash.throttle';
 const KEY = 'videoplayer-current-time';
 
 const iframe = document.querySelector('iframe');
