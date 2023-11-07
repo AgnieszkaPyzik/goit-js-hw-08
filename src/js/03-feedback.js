@@ -10,10 +10,12 @@ if (localStorage.getItem(KEY)) {
   if (dataLocal.email) form.email.value = dataLocal.email;
   if (dataLocal.message) form.message.value = dataLocal.message;
 }
+
 form.addEventListener(
   'input',
   _throttle(e => {
     if (localStorage.getItem(KEY)) data = JSON.parse(localStorage.getItem(KEY));
+
     data[e.target.name] = e.target.value;
     localStorage.setItem(KEY, JSON.stringify(data));
   }, 500)
